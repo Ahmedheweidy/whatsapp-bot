@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوت واتساب</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>بوت واتساب</h1>
+    <p id="status">🔹 انتظر تسجيل الدخول...</p>
+    <div id="qr-code" class="qr-container">📱 امسح رمز QR هنا</div>
+
+    <div class="button-group">
+      <button id="login" class="btn">🔑 تسجيل الدخول</button>
+      <button id="logout" class="btn">🚪 تسجيل الخروج</button>
+    </div>
+
+    <div class="input-group">
+      <label for="excelFile">📂 اختر ملف Excel:</label>
+      <input type="file" id="excelFile" accept=".xlsx" />
+      <p id="file-path">لم يتم تحديد ملف</p>
+    </div>
+
+    <div class="input-group">
+      <label for="message">✍️ الرسالة:</label>
+      <textarea id="message" placeholder="اكتب رسالتك هنا..."></textarea>
+    </div>
+
+    <div class="input-group">
+      <label for="imageFile">🖼️ اختر صورة (اختياري):</label>
+      <input type="file" id="imageFile" accept=".png,.jpg,.jpeg" />
+      <p id="image-path">لم يتم تحديد صورة</p>
+    </div>
+
+    <button id="sendMessages" class="btn send-btn">🚀 إرسال الرسائل</button>
+    <p id="countdown" class="countdown"></p>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
